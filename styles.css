@@ -69,11 +69,19 @@ input:focus, select:focus {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: -4px;
+    
 }
 
 .gender label {
    display: flex;
-   justify-content: space-between;  
+   justify-content: space-between;
+  margin-bottom: 5px;
+  padding-top: 6px;
+   
+}
+.gender input[type="radio"] {
+    margin-right: 6px; 
 }
 
 button {
@@ -88,5 +96,5 @@ button {
 }
 
 button:hover {
-    background-color: #5679a1;
+    background-color: #000000;
 }
