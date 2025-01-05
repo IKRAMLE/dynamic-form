@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe4e1; /* Light pink background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .pinky-form {
+    background-color: #fff0f5; /* Lavender blush for form background */
+    border: 2px solid #ff69b4; /* Hot pink border */
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pinky-form fieldset {
+    border: 2px solid #ff69b4; /* Match border to pink theme */
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .pinky-form legend {
+    font-size: 1.2em;
+    color: #ff1493; /* Deep pink */
+    padding: 0 10px;
+  }
+  
+  .pinky-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #ff69b4;
+  }
+  
+  .pinky-form input[type="text"],
+  .pinky-form input[type="number"],
+  .pinky-form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .pinky-form input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .pinky-form .checkbox-group label {
+    display: flex;
+    align-items: center;
+    color: #ff1493;
+  }
+  
+  .pinky-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  .pinky-form button:hover {
+    background-color: #ff1493; /* Slightly darker pink */
+  }
+  
