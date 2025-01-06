@@ -300,7 +300,7 @@
             <option value="photography">Photography</option>
         </select>
     </div>
-    <div>
+    <div class="file">
         <label for="Upload file">Upload File:</label>
         <input type="file" id="file">
     </div>
@@ -310,12 +310,13 @@
       
 </form>
 </div>
+
 <script>
+
 const form = document.getElementById('formulaire');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Get all form values
     const formData = {
         name: form.querySelector('input[type="text"]').value,
         surname: form.querySelectorAll('input[type="text"]')[1].value,
@@ -329,67 +330,7 @@ form.addEventListener('submit', function(e) {
     
     localStorage.setItem('formData', JSON.stringify(formData));
     
-    // Create new HTML page with form data
-    const displayHTML = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Form Submission Results</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 40px;
-                background-color: #f4f4f9;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-                 background-image: url(https://i.pinimg.com/474x/f6/3b/77/f63b776781b03bcab790b4b7e685c6c5.jpg);
-            }
-            .container {
-                background-color: rgb(212, 158, 158);
-                padding: 30px;
-                border-radius: 10px;
-                border: 3px solid rgb(155, 66, 80);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                max-width: 600px;
-                width: 100%;
-            }
-            h1 {
-                text-align: center;
-                color: #000000;
-                margin-bottom: 30px;
-            }
-            .info-row {
-                margin-bottom: 15px;
-                padding: 10px;
-                background-color: rgba(255, 255, 255, 0.5);
-                border-radius: 5px;
-            }
-            .label {
-                font-weight: bold;
-                color: rgb(146, 66, 79);
-            }
-            .back-button {
-                display: block;
-                width: 200px;
-                margin: 20px auto 0;
-                padding: 10px;
-                background-color: rgb(146, 66, 79);
-                color: white;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            .back-button:hover {
-                background-color: #e48b8b;
-            }
-        </style>
-    </head>
-    <body>
+    document.body.innerHTML = `
         <div class="container">
             <h1>Form Submission Results</h1>
             <div class="info-row">
@@ -416,16 +357,48 @@ form.addEventListener('submit', function(e) {
             <div class="info-row">
                 <span class="label">Uploaded File:</span> ${formData.file}
             </div>
-
         </div>
-    </body>
-    </html>
     `;
-    
-    // Open new window/tab with form data
-    const newWindow = window.open();
-    newWindow.document.write(displayHTML);
-    newWindow.document.close();
+
+    document.body.style.cssText = `
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url(https://i.pinimg.com/474x/f6/3b/77/f63b776781b03bcab790b4b7e685c6c5.jpg);
+    `;
+
+    const style = document.createElement('style');
+    style.textContent = `
+        .container {
+            background-color: rgb(212, 158, 158);
+            padding: 30px;
+            border-radius: 10px;
+            border: 3px solid rgb(155, 66, 80);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 30px;
+        }
+        .info-row {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+        }
+        .label {
+            font-weight: bold;
+            color: rgb(146, 66, 79);
+        }
+    `;
+    document.head.appendChild(style);
 });
 </script>
 </body>
